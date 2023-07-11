@@ -15,32 +15,49 @@ class Solution
  		int top=0;
  		int bottom=n-1;
  		int r=0;
- 		vector<int>final;
  		while(left<=right&&top<=bottom)
  		{
  		    for(int i=left;i<=right;i++)
  		    {
- 		            final.push_back(a[top][i]);
+ 		        if(r==k-1)
+ 		        {
+ 		            return a[top][i];
+ 		        }
+ 		        r++;
  		    }
  		    top++;
  		    for(int i=top;i<=bottom;i++)
  		    {
- 		            final.push_back(a[i][right]);
+ 		        if(r==k-1)
+ 		        {
+ 		            return a[i][right];
+ 		        }
+ 		        r++;
  		    }
  		    right--;
  		    for(int i=right;i>=left;i--)
  		    {
- 		            final.push_back(a[bottom][i]);
+ 		        if(r==k-1)
+ 		        {
+ 		            return a[bottom][i];
+ 		        }
+ 		        r++;
  		    }
  		    bottom--;
  		    for(int i=bottom;i>=top;i--)
  		    {
- 		            final.push_back(a[i][left]);
+ 		        if(r==k-1)
+ 		        {
+ 		            return a[i][left];
+ 		        }
+ 		        r++;
  		    }
  		    left++;
  		}
- 		return final[k-1];
     }
+
+
+
 };
 
 
